@@ -1,0 +1,20 @@
+<extend name="Base/common" />
+
+<block name="content">
+<div class="col-lg-10 col-lg-offset-1">
+
+	<include file="Public/pnav"/>
+	<table class="table table-bordered">
+		<tbody>
+			<tr><th>姓名: </th><td>{$userinfo.name}</td><th>姓别: </th><td>{$userinfo.sex|userclass_value}</td></tr>
+			<tr><th>生日: </th><td>{$userinfo.birthday}</td><th>工作经验: </th><td>{$userinfo.experience|userclass_value}</td></tr>
+			<tr><th>婚姻: </th><td>{$userinfo.marriage|userclass_value}</td><th>学历: </th><td>{$userinfo.education|userclass_value}</td></tr>
+		
+		</tbody>
+	</table>
+
+	
+</div>
+</block>
+
+

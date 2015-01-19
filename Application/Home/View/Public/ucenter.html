@@ -1,0 +1,9 @@
+			<notempty name="Think.session.user_auth.uid">
+				<if condition="$Think.session.user_auth.usertype eq 1">
+					<li><a href="{:U('/personal')}">{$Think.session.user_auth.email}</a></li>
+				<elseif condition="$Think.session.user_auth.usertype eq 2" />
+					<li><a href="{:U('/company')}">{$Think.session.user_auth.email}</a></li>
+				<else />
+				</if>
+			</notempty>
+			

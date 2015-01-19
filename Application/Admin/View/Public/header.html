@@ -1,0 +1,50 @@
+<div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="{:U('/admin')}" class="navbar-brand">管理后台</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">用户分类 <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+
+                <li><a href="{:U('userclass/index')}">个人用户分类</a></li>
+                <li><a href="{:U('comclass/index')}">企业用户分类</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="themes">用户管理 <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="themes">
+
+                <li><a href="{:U('user/index')}">个人用户</a></li>
+                <li><a href="{:U('com/index')}">企业用户</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="job">职位管理 <span class="caret"></span></a>
+              <ul class="dropdown-menu" aria-labelledby="job">
+
+                <li><a href="{:U('Industry/index')}">行业分类</a></li>
+                <li><a href="{:U('title/index')}">职能分类</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="{:U('city/index')}">城市</a>
+            </li>
+
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="{:U('/home')}">前台首页</a></li>
+          </ul>
+
+        </div>
+      </div>
+</div>

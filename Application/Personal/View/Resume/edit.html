@@ -1,0 +1,344 @@
+<extend name="Base/common" />
+
+<block name="content">
+<div class="col-lg-11 col-lg-offset-1">
+	<include file="Public/pnav"/>
+</div>
+<div class="col-lg-7 col-lg-offset-1">
+
+
+	<hr />
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			基本信息
+		</div>
+
+		<div class="panel-body">
+		
+			<div class="userinfo" style="display:none"><div class="userinfoswitch"><span class="badge pull-right">&times;</span></div>
+			<form class="form" method="post" action="{:U('saveUserinfo')}">
+				<input type="hidden" name="uid" value="{$user.uid}" />
+				<div class="form-group">
+					<label for="username">姓名：</label>
+					<input type="text" name="username" id="username" value="{$userinfo.name}" />
+				</div>
+				<div class="form-group">
+					<label for="sex">性别：</label>
+						<volist name="user_gender" id="item">
+							<label for="sex_{$item.id}">{$item.name}</label>
+							<input type="radio" name="sex" value="{$item.id}" id="sex_{$item.id}" <if condition="$item['id'] eq $userinfo['sex']">checked</if> />
+							
+						</volist>
+				</div>
+				
+				<div class="form-group">
+					<label for="birthday">出生日期：</label>
+					<input type="text" name="birthday" id="birthday" value="{$userinfo.birthday}" />
+				</div>
+				<div class="form-group">			
+					<label for="city">常住地区：</label>
+					<input type="text" name="city" id="city" value="{$userinfo.city}" />
+				</div>
+				<div class="form-group">
+					<label for="email">Email：</label>
+					<input type="email" name="email" id="email" value="{$user.email}" readOnly="true" />		
+				</div>
+
+				<div class="form-group">			
+					<label for="telphone">手机号：</label>
+					<input type="text" name="telphone" id="telphone" value="{$userinfo.telphone}" />
+				</div>
+
+				<div class="form-group">			
+					<label for="marriage">婚姻状况：</label>
+					<select name="marriage" id="marriage">
+						<volist name="user_marriage" id="item">
+							<option value="{$item.id}">{$item.name}</option>
+						</volist>
+					</select>
+				</div>	
+
+				<div class="form-group">			
+					<label for="workstatus">工作状态：</label>
+					<input type="text" name="workstatus" id="workstatus" value="{$userinfo.workstatus|userclass_value}" />
+				</div>			
+				<div class="form-group">			
+					<label for="keyword">关键词：</label>
+					<input type="text" name="keyword" id="keyword" value="{$userinfo.keyword}" />
+				</div>			
+				<div class="form-group">			
+					
+					<input type="submit" name="submit_userinfo" value="保存" class="btn btn-primary"/>
+					<input type="button" value="取消" class="btn btn-default userinfoswitch"/>
+				</div>		
+			</form>
+			</div>
+					
+			<div class="userinfo"><div class="userinfoswitch"><span class="glyphicon glyphicon-pencil pull-right"></span></div>
+			<table class="table table-bordered">
+				<tbody>
+					<tr><th>姓名：</th><td>{$userinfo.name}</td><th>性别：</th><td>{$userinfo.sex|userclass_value}</td></tr>
+					<tr><th>出生日期：</th><td>{$userinfo.birthday}</td><th>常住地区：</th><td>{$userinfo.city|userclass_value}</td></tr>
+					<tr><th>Email：</th><td>{$user.email}</td><th>手机号：</th><td>{$userinfo.telphone}</td></tr>
+					<tr><th>婚姻状况：</th><td>{$userinfo.marriage|userclass_value}</td><th>状态：</th><td>在职，看看新机会</td></tr>
+					<tr><th>关键词：</th><td colspan="3">{$userinfo.keyword}</td></tr>
+
+				</tbody>
+			</table>			
+			</div>
+		</div>
+	</div>
+
+	
+	<hr />
+	<div class="panel panel-warning expect" style="display:none">
+		<div class="panel-heading">
+			求职意向 <span class="badge pull-right expectswitch">&times;</span>
+		</div>
+		<div class="panel-body">
+			<form class="form" method="post" action="{:U('saveUserExpect')}">
+				<div class="form-group">
+					<label for="industry">期望行业：</label>
+					<input type="text" name="industry" id="industry" value="{$userexpect.industry}" />
+				</div>
+				<div class="form-group">
+					<label for="overtime">能否加班：</label>
+						<volist name="user_overtime" id="item">
+							{$item.name}<input type="radio" name="Sex" value="{$item.id}" <if condition="$item['id'] eq $userexpect['overtime']">checked</if> />
+						</volist>
+				</div>
+				<div class="form-group">
+					<label for="salary">期望薪水：</label>
+					<input type="text" name="salary" id="salary" value="{$userexpect.salary}" />
+				</div>
+				<div class="form-group">			
+					<label for="city">期望地区：</label>
+					<input type="text" name="city" id="city" value="{$userexpect.city}" />
+				</div>
+
+
+				<div class="form-group">			
+					<label for="worktype">工作性质：</label>
+					<select name="worktype" id="worktype">
+						<volist name="user_worktype" id="item">
+							<option value="{$item.id}">{$item.name}</option>
+						</volist>
+					</select>
+				</div>	
+
+				<div class="form-group">			
+					<label for="workstatus">工作状态：</label>
+					<input type="text" name="workstatus" id="workstatus" value="{$userinfo.workstatus|userclass_value}" />
+				</div>			
+				<div class="form-group">			
+					
+					<input type="submit" name="submit_userinfo" value="保存" class="btn btn-primary"/>
+					<input type="button" value="取消" class="btn btn-default expectswitch"/>					
+				</div>		
+			</form>
+		</div>
+	</div>
+
+	<div class="panel panel-info expect">
+		<div class="panel-heading">
+			求职意向 <span class="badge pull-right expectswitch"><span class="glyphicon glyphicon-pencil"></span></span>
+		</div>
+		<div class="panel-body">
+		</div>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>期望行业：</th><td>{$userexpect.industry}</td><th>到岗时间：</th><td></td></tr>
+				<tr><th>期望薪水：</th><td>{$userinfo.birthday}</td><th>期望地区：</th><td></td></tr>
+				<tr><th>工作性质：</th><td>{$userinfo.worktype|userclass_value}</td><th>能否加班：</th><td>{$userexpect.overtime|userclass_value}</td></tr>
+				<tr><th>期望职能：</th><td colspan="3"><select><option>运营经理</option><option>运营总监</option><option> 市场运营</option><option> 产品经理</option><option> 市场营销</option><option> PM 项目经理</option></select></td></tr>
+
+			</tbody>
+		</table>
+	</div>
+
+	<hr />
+	<div class="panel panel-info">
+	
+		<div class="panel-heading">
+			教育经历
+		</div>
+	<volist name="usereducations" id="usereducation">
+		<div class="panel-body">
+			<div class="education" style="display:none"><div class="educationswitch"><span class="badge pull-right">&times;</span></div>
+			<form class="form" method="post" action="{:U('saveUserEducation')}">
+				<div class="form-group">
+					<label for="school">学校：</label>
+					<input type="text" name="school" id="school" value="{$usereducation.school}" />
+				</div>
+				<div class="form-group">
+					<label for="overtime">学历：</label>
+					<select name="education">
+						<volist name="user_education" id="item">
+							<option value="{$item.id}">{$item.name}</option>
+						</volist>
+					</select>
+				</div>
+
+				<div class="form-group">			
+					<label for="city">地区：</label>
+					<input type="text" name="city" id="city" value="{$usereducation.city}" />
+				</div>
+
+				<div class="form-group">			
+					<label for="major">专业：</label>
+					<input type="text" name="major" id="major" value="{$usereducation.major}" />
+				</div>			
+				<div class="form-group">			
+					
+					<input type="submit" name="submit_userinfo" value="保存" class="btn btn-primary"/>
+					<input type="button" value="取消" class="btn btn-default educationswitch"/>					
+				</div>		
+			</form>
+			</div>
+					
+			<div class="education"><div class="educationswitch"><span class="glyphicon glyphicon-pencil pull-right"></span></div>
+				<table class="table table-bordered">
+					<tbody>
+						<tr><th>学校：</th><td>{$usereducation.school}</td><th>学历：</th><td>{$usereducation.education|userclass_value}</td></tr>
+						<tr><th>专业：</th><td>{$usereducation.major}</td</tr>
+
+					</tbody>
+				</table>		
+			</div>		
+
+		</div>
+	</volist>
+	<button class="btn btn-block educationbutton educationform education">添加教育经历</button>
+	<form class="form educationform" method="post" action="{:U('addUserEducation')}" style="display:none">
+		<input type="hidden" name="eid" value="{$eid}" />
+		<div class="form-group">
+			<label for="school">学校：</label>
+			<input type="text" name="school" id="school" value="" />
+		</div>
+		<div class="form-group">
+			<label for="overtime">学历：</label>
+			<select name="education">
+				<volist name="user_education" id="item">
+					<option value="{$item.id}">{$item.name}</option>
+				</volist>
+			</select>
+		</div>
+
+		<div class="form-group">			
+			<label for="major">专业：</label>
+			<input type="text" name="major" id="major" value="" />
+		</div>			
+		<div class="form-group">			
+			
+			<input type="submit" name="submit_userinfo" value="保存" class="btn btn-primary"/>
+			<input type="button" value="取消" class="btn btn-default educationbutton"/>					
+		</div>		
+	</form>	
+	</div>
+
+
+	<hr />
+	<div class="detail_line table-responsive">
+		<h4>培训经历</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>	
+
+	<div class="detail_line table-responsive">
+		<h4>专业技能</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>	
+	
+	<div class="detail_line table-responsive">
+		<h4>工作经历</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>	
+	
+	<div class="detail_line table-responsive">
+		<h4>项目经历</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>	
+	
+	<div class="detail_line table-responsive">
+		<h4>证书</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>
+
+	<div class="detail_line table-responsive">
+		<h4>附加信息</h4>
+		<table class="table table-bordered">
+			<tbody>
+				<tr><th>字段A</th><td></td><th>字段A</th><td></td></tr>
+
+			</tbody>
+		</table>
+	</div>	
+	
+	
+</div>
+
+<div class="col-lg-3 alert alert-info">
+	here put resume check
+</div>
+
+</block>
+
+
+<block name="bottom_script">
+<script>
+	$("form").submit(function(){
+		var self = $(this);
+		$.post(self.attr("action"), self.serialize(), success, "json");
+		return false;
+
+		function success(data){
+			if(data.status){
+				alert(data.info);
+				window.location.reload();
+			} else {
+				self.find(".Validform_checktip").text(data.info);
+				alert(data.info);
+			}
+		}
+	});
+	
+	$(".userinfoswitch").click(function(){
+		$(".userinfo").toggle();
+	});	
+	
+	$(".expectswitch").click(function(){
+		$(".expect").toggle();
+	});
+
+	$(".educationswitch").click(function(){
+		$(".education").toggle();
+	});
+	$(".educationbutton").click(function(){
+		$(".educationform").toggle();
+	});	
+</script>
+</block>

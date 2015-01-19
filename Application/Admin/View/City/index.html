@@ -1,0 +1,52 @@
+<extend name="Base/common" />
+
+<block name="content">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  添加省份
+</button>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加省份</h4>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{:U()}">
+			省份名称: <input type="text" name="name" />
+			排序:	<input type="text" name="sort" />
+			<br />
+			<br />
+			<input type="submit" class="btn btn-primary pull-right" value="提交" />
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table  id="example-basic">
+<tbody>
+        <caption>区域列表</caption>
+        <thead>
+          <tr>
+            <th>名称</th>
+            <th>排序</th>
+          </tr>
+        </thead>
+  <volist name="items" id="city">
+	<tr data-tt-id="{$city.id}"<if condition="$city.pid neq '0'" > data-tt-parent-id="{$city.pid}"</if>> 
+
+		<td>{$city.name}</td><td>{$city.sort}</td> 
+	</tr>
+  </volist>
+</tbody>
+</table>
+
+<script>
+       $("#example-basic").treetable({ expandable: true });
+</script>	  
+</block>
+
+

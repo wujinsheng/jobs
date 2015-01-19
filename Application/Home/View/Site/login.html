@@ -1,0 +1,38 @@
+<extend name="Base/common" />
+
+<block name="content">
+<section>
+	<div class="col-lg-4 col-lg-offset-4">
+        <form class="login-form" action="__SELF__" method="post">
+          <div class="form-group">
+            <label class="control-label" for="inputEmail">用户名</label>
+  
+              <input type="text" id="inputEmail" class="form-control" placeholder="请输入邮箱" value="" name="email">
+ 
+          </div>
+          <div class="form-group">
+            <label class="control-label" for="inputPassword">密码</label>
+ 
+              <input type="password" id="inputPassword"  class="form-control" name="password">
+
+          </div>
+		 
+		  <notempty name="message">
+			<br />
+			<span class="label label-danger">{:$message}</span>
+		  </notempty>
+
+          <div class="form-group">
+            <div class="controls">
+              <label class="checkbox">
+                <!--<input type="checkbox"> 自动登陆-->
+              </label>
+              <input type="submit" class="btn" value="登录">
+            </div>
+          </div>
+		 
+
+        </form>
+	</div>
+</section>
+</block>

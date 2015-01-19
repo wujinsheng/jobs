@@ -1,0 +1,659 @@
+<extend name="Base/common" />
+
+<block name="content">
+
+<div class="wrp">
+<div class="job_box">
+  <div class="job_title_top"> 职位搜索</div>
+  <form method="post" action="" class="form_search">
+  <div class="job_list">
+   <div class="label">关键词</div>
+   <div class="li_search">
+   <div class="li-selec selectbg" name="nice-select">
+    <input type="text" readonly="readonly" value="职位名">
+    			<ul>
+				<li data-value="1" style="border-top:1px solid #ccc">1990</li>
+				<li data-value="2">1991</li>
+				<li data-value="3">1992</li>
+				<li data-value="4">1993</li>
+			</ul>
+    </div>
+    <div class="li_input"> <input type="text" value=""  class="input_two"> </div>
+     <div class="li_input_area">
+      <input type="text" value="工作地点" class="input_three name-bg"  id="city" readonly="readonly"/>
+	 <input type="hidden" name="city" value="" id="city_hid" />
+     </div>
+    <div class="clear"></div> 
+    </div>
+    <div class="search_btn"><input type="button"  class="libtn"/><a href="#" class="gj_search"><span class="word">收起搜索</span><span class="gj">高级搜索</span></a></div>  
+  </div>
+<div class="job_list" id="panel2">
+    <div class="label ">热门城市</div>
+    <div class="fl">
+   <a href="#" class="city">上海</a>
+   <a href="#" class="city">北京</a>
+   <a href="#" class="city">广东</a>
+   <a href="#" class="city">上海</a>
+   <a href="#" class="city">北京</a>
+   <a href="#" class="city">广东</a>
+   <a href="#" class="city">上海</a>
+   <a href="#" class="city">北京</a>
+   <a href="#" class="city">广东</a>
+   <a href="#" class="city">上海</a>
+   </div>
+   <div class="clear"></div>
+  </div> 
+
+   <div class="panel">
+    <div class="job_list">
+    <div class="label">职能</div>
+    <li>
+    <input type="text" class="input240 name-bg" placeholder="职能" id="zhiwei" name="zhiwei" readonly="readonly"  />
+    <input type="hidden" name="zhiwei" value="" id="zhiwei_hid" />  
+    </li>
+    <li class="label p37">行业</li>
+    <li>
+    <input type="text" class="input240 name-bg"  id="hangye" readonly="readonly"/>
+	<input type="hidden" name="hangye" value="" id="hangye_hid" />
+    </li>
+    <div class="clear"></div>
+    </div>
+
+    <div class="job_list" >
+    
+    <div class="fl">
+    <div class="label ">留学国家</div>
+    <li class="name-bg fl" style="width:160px;" >
+    <input type="text" class="input125 " id="country" readonly="readonly"  />
+	<input type="hidden" name="country" value="" id="country_hid" />
+    </li>
+    </div>
+    
+     <div class="fl">
+    <div class="label p37">公司规模</div>
+    <div class="li125 selectbg " name="nice-select">
+    <input type="text" readonly="readonly" >
+    			<ul>
+				<li data-value="1" style="border-top:1px solid #ccc">少于50人</li>
+				<li data-value="2">50-150人</li>
+				<li data-value="3">500-1000人</li>
+				<li data-value="4">1000-5000人</li>
+			</ul>
+    </div>
+    </div>
+    
+     <div class="fl">
+    <div class="label p37">发布时间</div>
+    <div class="li125 selectbg " name="nice-select">
+    <input type="text" readonly="readonly" >
+    			<ul>
+				<li data-value="1" style="border-top:1px solid #ccc">近一天</li>
+				<li data-value="2">近二天</li>
+				<li data-value="3">近三天</li>
+				<li data-value="4">近一周</li>
+				<li data-value="5">近一月</li>
+				<li data-value="6">近六周</li>
+				<li data-value="6">近两月</li>
+			</ul>
+    </div>
+    </div>
+    <div class="clear"></div>
+    </div>
+
+    <div class="job_list">
+    <div class="label ">历史搜索</div>
+    <div class="fl">
+   <a href="#" class="end">【产品经理+上海...</a>
+   <a href="#" class="end">【产品经理+上海...</a>
+   <a href="#" class="end">【产品经理+上海...</a>
+   </div>
+    </div>  
+	</div>
+  </form>
+    </div>
+
+ 
+    <div class="job_l fl">
+    <div class="top">您职位订阅状态为不需要，这样会错过很多机会，<a href="#">立即订阅</a></div>
+    <div class="content">
+    <div class="job_title ">
+    <span  class="one">职位信息</span>
+    <span  class="two"><a   href="#"><img src="images/job/j_set.jpg" /></a>设置职位意向</span>
+    </div>
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+
+	<ul class="job_info">
+	<li class="info_one">
+    <span class="fl">艺术留学顾问</span><span class="time">2014-11-20</span>
+    <div class="clear"></div>
+    </li>
+    <li class="info_two">
+    <span class="fl">上海佐诚资产管理有限公司 <span class="job_pub">上海-黄浦区</span></span> 
+    <span class="money fr">年薪  <em>10-15万</em></span>
+    <div class="clear"></div>
+    </li>
+	<li class="info_three">
+	<div class="info fl">
+	公司性质：合资      
+	<span class="jl20">公司规模：20-99人</span>      
+	<span class="jl20">经验：5-10年 </span>   
+	<span class="jl20">学历：本科</span>
+	</div>
+    <div class="img"> <a href="#"><img src="images/job/td.jpg" /></a><a href=""><img src="images/job/job_sc.jpg" /></a></div>
+    <div class="clear"></div>
+	</li>
+	</ul>
+	<div class="job_page">
+    <a href="#" class="page_l" >&nbsp;</a>
+    <a href="#" class="num" >1</a>
+    <a href="#" class="num" >2</a>
+    <a href="#" class="num">3</a>
+    <a href="#" class="num" >4</a>
+    <a href="#" class="num" >5</a>
+    <a href="#" class="page_r">&nbsp;</a>
+    </div> 
+    
+    <div class="clear"></div>	
+    </div>
+    <div class="job_bot mt20"><img src="images/job/job_bot.jpg" /></div>
+    </div>
+    
+   <div class="job_r fr">
+   <div class="jobr_title">
+    <span  class="one">在结果中筛选</span>
+    <span  class="two"><a href="#">重置</a></span>
+   </div>
+   <div class="jobr_detail">
+   <div class="jobr_titles" >
+    <span  class="one">月薪范围</span>
+    <span  class="two"> <em class="up1"></em></span>
+    <div class="clear"></div>
+   </div>
+   <ul class="a1">
+   <li>不限</li>
+   <li>面议</li>
+   <li>2000-4999</li>
+   <li>5000-7999</li>
+   <li>8000-11999</li>
+   <li>12000-14999</li>
+   <li>15000以上</li>
+   <li  class="more"><a  href="#">更多</a></li>
+   </ul>
+   </div>
+   <div class="jobr_detail">
+   <div class="jobr_titles">
+    <span  class="one">发布时间</span>
+    <span  class="two" >
+     <em class="up2"></em>
+    </span>
+   </div>
+   <ul class="a2">
+   <li>不限</li>
+   <li>一天内</li>
+   <li>三天内</li>
+   <li>一周内</li>
+   <li>两周内</li>
+   <li>一月内</li>
+   <li  class="more"><a  href="#">更多</a></li>
+   </ul>
+   </div>
+   <div class="jobr_detail">
+   
+   <div class="jobr_titles">
+    <span  class="one">工作性质</span>
+    <span  class="two"> <em class="up3"></em></span>
+   </div>
+   <ul class="a3">
+   <li>不限</li>
+   <li>全职</li>
+   <li>兼职/实习</li>
+   <li  class="more"><a  href="#">更多</a></li>
+   </ul>
+   </div>
+   <div class="jobr_detail">
+   <div class="jobr_titles">
+    <span  class="one">企业类型</span>
+    <span  class="two"> <em class="up4"></em></span>
+   </div>
+   <ul class="a4">
+   <li>不限</li>
+   <li>国企</li>
+   <li>外企（欧美）</li>
+   <li>外企（非欧美）</li>
+   <li>民营企业</li>
+   <li>合资企业</li>
+   <li  class="more"><a  href="#">更多</a></li>
+   </ul>
+   </div>
+   <div class="jobr_detail">
+   <div class="jobr_titles">
+    <span  class="one">公司规模</span>
+    <span  class="two"> <em class="up5"></em></span>   
+   </div>
+   <ul class="a5">
+   <li>不限</li>
+   <li>少于50人</li>
+   <li>50-150人</li>
+   <li>500-1000人</li>
+   <li>1000-5000人</li>
+   <li  class="more"><a  href="#">更多</a></li>
+   </ul>
+   </div>  
+   </div>
+   <div class="clear"></div> 
+</div>
+ <!-- 遮罩层 Start-->
+<div id="rg_shade" class="rg_choose"> </div>
+<!--当前行业-->
+<div class="rg_hy_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择行业分类 </span><span class="hy_close"><a href="#" id="cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_hy_checked"></div>
+	<div class="rg_ch_content" id="rg_hy_content">
+    <div class="sort_data">
+    <table >
+    <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件1</th>
+    <td>
+          <ul>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class=" rg_hy_input" type="button" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    </table>
+     </div>
+     </div>
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_hy_button"/> 
+	  <input type="submit" class="subAgain" value=" " name="cancle" id="btncancle"/>
+	  </div>
+      </div>   
+</div>
+
+
+<!--职能-->
+<div class="rg_zw_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择职能分类 </span><span class="hy_close"><a href="#" id="top_zw_cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_zw_checked"></div>
+	<div class="rg_ch_content" id="rg_zw_content">
+    <div class="sort_data">
+  <table >
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input type="button" name="area" class="rg_zw_input" zw="java" id="zw_1" /><label for="zw_1"> java</label></li>
+              <li><input type="button" name="area" class="rg_zw_input" zw="php"   id="zw_2" /><label for="zw_2"> php</label></li>
+              <li><input type="button" name="area" class="rg_zw_input" zw="oracle"   id="zw_3"  /><label for="zw_3"> oracle</label></li> 
+              <li><input type="button" name="area" class="rg_zw_input" zw="其他"  id="zw_4"  /><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件 </th>
+    <td>
+          <ul>
+              <li><input type="button" name="area" class="rg_zw_input" zw="java" id="zw_1" value=""/><label for="zw_1"> java</label></li>
+              <li><input type="button" name="area" class="rg_zw_input" zw="php"   id="zw_2"  value=""/><label for="zw_2"> php</label></li>
+              <li><input type="button" name="area" class="rg_zw_input" zw="oracle"   id="zw_3"  value=""/><label for="zw_3"> oracle</label></li> 
+              <li><input type="button" name="area" class="rg_zw_input" zw="其他"  id="zw_4"  value=""/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+
+    </table>
+	</div>
+</div>
+
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_zw_button"/> 
+	  <input type="reset" class="subAgain" value=" " name="cancle" id="btnZWcancle">
+	  </div>
+      </div>
+</div>
+
+
+<!--地区-->
+<div class="rg_city_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择城市信息 </span><span class="hy_close"><a href="#" id="top_city_cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_city_checked"></div>
+	<div class="rg_ch_content" id="rg_city_content">
+    <div class="sort_data">
+   <div class="city_box ">    
+   <div class="city_title"> 国内城市</div>
+    <div class="td fl">热门城市</div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div>
+    
+   <div class="city_box odd">
+    <div class="td fl"></div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+              <ol><input type="button" name="area" class=" rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class=" rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div>  
+
+   <div class="city_title"> 海外及港澳台</div>
+  <div class="city_box odd "> 
+    <div class="td fl"></div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class="rg_city_input" city="香港" id="city_1" value=""/><label for="city_1"> 香港</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="澳门"   id="city_2"  value=""/><label for="city_2"> 澳门</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="台湾"   id="city_3"  value=""/><label for="city_3"> 台湾</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div>
+    
+  <div class="city_box odd "> 
+    <div class="td fl"></div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class="rg_city_input" city="香港" id="city_1" value=""/><label for="city_1"> 北美洲</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="澳门"   id="city_2"  value=""/><label for="city_2"> 大洋洲</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="台湾"   id="city_3"  value=""/><label for="city_3"> 大洋洲</label></ol> 
+              <ol><input type="button" name="area" class="rg_city_input" city="亚洲"  id="city_4"  value=""/><label for="city_4"> 亚洲</label></ol> 
+              <ol><input type="button" name="area" class="rg_city_input" city="欧洲"   id="city_3"  value=""/><label for="city_3"> 欧洲</label></ol> 
+              <ol><input type="button" name="area" class="rg_city_input" city="非洲"  id="city_4"  value=""/><label for="city_4"> 非洲</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div>
+
+  <div class="city_box "> 
+    <div class="td fl">热门国家</div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class="rg_city_input" city="上海" id="city_1" value=""/><label for="city_1"> 上海</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="北京"   id="city_2"  value=""/><label for="city_2"> 北京</label></ol>
+              <ol><input type="button" name="area" class="rg_city_input" city="大连"   id="city_3"  value=""/><label for="city_3"> 大连</label></ol> 
+              <ol><input type="button" name="area" class="rg_city_input" city="湖北"  id="city_4"  value=""/><label for="city_4"> 湖北</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div> 
+    
+	</div>
+</div>
+
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_city_button"/> 
+	  <input type="reset" class="subAgain" value=" " name="cancle" id="btncitycancle">
+	  </div>
+      </div>
+</div>
+
+
+
+<!--国家-->
+<div class="rg_country_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择城市信息 </span><span class="hy_close"><a href="#" id="top_city_cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_country_checked"></div>
+	<div class="rg_ch_content" id="rg_country_content">
+    <div class="sort_data">
+  <div class="city_box "> 
+    <div class="td fl">热门国家</div>
+          <ul class="city fr" id="all_city ">
+              <ol><input type="button" name="area" class="rg_country_input" country="美国" id="country_1" value=""/><label for="country_1"> 美国</label></ol>
+              <ol><input type="button" name="area" class="rg_country_input" country="英国"   id="country_2"  value=""/><label for="country_2"> 英国</label></ol>
+              <ol><input type="button" name="area" class="rg_country_input" country="德国"   id="country_3"  value=""/><label for="country_3"> 德国</label></ol> 
+              <ol><input type="button" name="area" class="rg_country_input" country="澳大利亚"  id="country_4"  value=""/><label for="country_4"> 澳大利亚</label></ol> 
+              <ol><input type="button" name="area" class="rg_country_input" country="美国" id="country_1" value=""/><label for="country_1"> 美国</label></ol>
+              <ol><input type="button" name="area" class="rg_country_input" country="英国"   id="country_2"  value=""/><label for="country_2"> 英国</label></ol>
+              <ol><input type="button" name="area" class="rg_country_input" country="德国"   id="country_3"  value=""/><label for="country_3"> 德国</label></ol> 
+              <ol><input type="button" name="area" class="rg_country_input" country="澳大利亚"  id="country_4"  value=""/><label for="country_4"> 澳大利亚</label></ol> 
+          </ul>
+          <div class="clear"></div>
+    </div> 
+    
+	</div>
+</div>
+
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_country_button"/> 
+	  <input type="reset" class="subAgain" value=" " name="cancle" id="btncountrycancle">
+	  </div>
+      </div>
+</div>
+<!-- 遮罩层 End-->
+</block>
+
+

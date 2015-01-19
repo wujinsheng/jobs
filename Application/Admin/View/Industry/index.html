@@ -1,0 +1,131 @@
+<extend name="Base/common" />
+
+<block name="content">
+<button id="button" class="btn btn-primary pull-right">
+  添加行业
+</button>
+
+<div id="dialog" style="display:none">  
+	<div id="tabs">
+	  <ul>
+		<li><a href="#tabs-1">添加父类</a></li>
+		<li><a href="#tabs-2">添加子类</a></li>
+	  </ul>
+	  <div id="tabs-1">
+			<form id="parentForm" method="post" action="{:u('industry/addp')}"  onSubmit="return false;" >  
+				父类名： 
+					<input type="text" name="name" />
+
+				<p>
+					<br />
+					<button class="btn btn-primary" id="addp">提交</button>
+				</p>
+			</form>
+	  </div>
+	  <div id="tabs-2">
+			<form id="subForm" method="post" action="{:u('industry/add')}" onSubmit="return false;" >  
+				子类名：
+					<input type="text" name="name"/> 
+				<br />		
+				所属父类：
+				<br />
+					<select name="pid">
+						<volist name="parents" id="vo">
+							<option value="{$vo.id}">{$vo.name}</option>
+						</volist>
+					</select>
+				<p>
+					<br />
+					<button class="btn btn-primary" id="add">提交</button>
+				</p>
+			</form>
+	　</div>
+	</div>  
+</div>
+
+<table  id="example-basic">
+<tbody>
+        <caption>行业列表</caption>
+        <thead>
+          <tr>
+            <th>名称</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+  <volist name="items" id="city">
+	<tr data-tt-id="{$city.id}"<if condition="$city.pid neq '0'" > data-tt-parent-id="{$city.pid}"</if>> 
+
+		<td>{$city.name}</td>
+		<td>
+			<if condition="$city.pid neq '0'" >
+				<a class="btn btn-warning btn-xs" href="{:U('industry/del?id='.$city['id'])}" onClick="return confirm('确定要删除此分子类？ ');">删除</a>
+			<else />
+				
+				<a class="btn btn-danger btn-xs" href="{:U('industry/delp?id='.$city['id'])}" onClick="return confirm('确定要删除此分类及其子类？');">删除</a>
+			</if>
+		</td> 
+	</tr>
+  </volist>
+</tbody>
+</table>
+
+ 
+<script>
+	$("#example-basic").treetable({ expandable: true });
+	$( "#tabs" ).tabs();
+
+	$("#button").click(function(){
+		$("#dialog").dialog({  
+			modal: true,  
+			//autoOpen: false,  
+			buttons:{  
+ 
+				"关闭": function() {  
+					$("#dialog").dialog("close");  
+				}  
+			}  
+		}); 
+	})
+	
+	$("#add").click(function(){
+		var form = $("#subForm");  
+		$.ajax({  
+			url:form.attr('action'),  
+			type:form.attr('method'),  
+			data:form.serialize(),  
+			dataType:"json",  
+			success:function(data){  
+				$("#dialog").dialog("close");  
+				alert("添加成功啦"); 
+				window.location.reload();
+			},  
+			error:function(){  
+				$("#dialog").dialog("close");  
+				alert("出错了哦");  
+			}  
+		})	
+	});
+
+	$("#addp").click(function(){
+		var form = $("#parentForm");  
+		$.ajax({  
+			url:form.attr('action'),  
+			type:form.attr('method'),  
+			data:form.serialize(),  
+			dataType:"json",  
+			success:function(data){  
+				$("#dialog").dialog("close");  
+				alert("添加成功啦"); 
+				window.location.reload();
+			},  
+			error:function(){  
+				$("#dialog").dialog("close");  
+				alert("出错了哦");  
+			}  
+		})	
+	});
+
+</script>	  
+</block>
+
+

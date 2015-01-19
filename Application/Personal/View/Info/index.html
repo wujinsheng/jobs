@@ -1,0 +1,330 @@
+<extend name="Base/common" />
+
+<block name="content">
+<div class="wrp"> 
+<div class="register-box-detail">
+  <div class="steps"> 
+  <span class="t-one">职场名片创建中...</span>
+  <span class="t-two">系统已向您的登录邮箱 <em>654321111@qq.com</em> 发送了验证邮件，请及时查收。</span> 
+  <div class="clear"></div>
+  </div>
+  <div class="detail-info" id="s-namecard">
+    <form method="post" action="" id="RegisterForm" >
+    <table>
+	<tr>
+	<td><input type="text"  class="no-bg" name="name" placeholder="姓名"/></td>
+	<td>
+                    <div id="register_radio" class="clearfix">
+                    <p class="on">男<input type="radio" value="0" name="jobType" />  </p>
+                    <p>女<input type="radio" value="1" name="jobType" />  </p>
+                </div> 
+	</td>
+	</tr>
+	<tr>
+    
+	<td>
+     <div class="nice-select" name="nice-select">    
+     <input class="" name="birthday" value="" type="text"  placeholder="出生年份"/>
+
+     			<ul>
+				<li data-value="1">1990</li>
+				<li data-value="2">1991</li>
+				<li data-value="3">1992</li>
+				<li data-value="4">1993</li>
+			</ul>
+            </div>
+   </td>
+	<td>
+    	<div class="nice-select" name="nice-select">
+          <input type="select" name="jingyan"  placeholder="工作经验">
+			<ul>
+				<li data-value="1">有</li>
+				<li data-value="2">无</li>
+			</ul>
+		</div>
+    </td>
+	</tr>
+	<tr>
+	<td >
+	<div class="nice-select" name="nice-select">
+			<input type="text" placeholder="在职，看看新机会" readonly>
+			<ul>
+				<li data-value="1">在职，急寻新工作</li>
+				<li data-value="2">在职，暂无跳槽打算</li>
+				<li data-value="3">离职，正在找工作</li>
+			</ul>
+		</div>
+    </td>
+	<td>
+    	<div class="nice-select" name="nice-select">
+			<input type="text" value="" placeholder="最高学历" name="education" readonly="readonly" />
+			<ul>
+			<!--
+				<li data-value="1" style="border-top:1px solid #ccc">博士后</li>
+				<li data-value="2">博士</li>
+				<li data-value="2">MBA/EMBA</li>
+				<li data-value="2">硕士</li>
+				<li data-value="2">本科</li>
+				<li data-value="2">大专</li>
+				<li data-value="2">中专</li>
+				<li data-value="2">中技</li>
+				<li data-value="2">高中</li>
+				<li data-value="2">初中</li>
+			-->
+			<foreach name='user_education' item = 'item'>
+				<li data-vaule="{$item.id}"> {$item.name}</li>
+
+			</foreach>
+			</ul>
+		</div>
+</td>
+	</tr>
+	<tr>
+	<td> <input placeholder="所在城市"  readonly="readonly" /></td>
+	<td></td>
+	</tr>
+	<tr>
+	<td colspan="2"  class="ltwo" ><input class="no-bg" placeholder="当前公司"  /></td>
+	</tr>
+	<tr>
+	<td> <input placeholder="当前行业"  id="hangye" readonly="readonly" />
+	    <input type="hidden" name="hangye" value="" id="hangye_hid" />
+	</td>
+	<td><input placeholder="职位" id="zhiwei" name="zhiwei" readonly="readonly" />
+	      <input type="hidden" name="zhiwei" value="" id="zhiwei_hid" />
+	</td>
+	</tr>
+	<tr>
+	<td colspan="2" class="ltwo"> <input class="no-bg" placeholder="手机号码Tel"  /></td>
+	</tr>
+	</table>
+	<div class="register_keep"><input type="submit" value="" name="ok" /></div> 
+    </form>
+</div>
+<div class="detail-info-r"><img src="__ROOT__/Public/Personal/images/wx-r_07.jpg" alt="微信" /></div>
+<div class="clear"></div>
+</div>
+</div> 
+<!-- 遮罩层 Start-->
+<div id="rg_shade" class="rg_choose"> </div>
+<div class="rg_hy_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择行业分类 </span><span class="hy_close"><a href="#" id="cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_hy_checked"></div>
+	<div class="rg_ch_content" id="rg_hy_content">
+    <div class="sort_data">
+    <table >
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件
+    </th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_5"  /><label  for="radio_5">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件22"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成22" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件1</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件1</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件1</th>
+    <td>
+          <ul>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="互联网/移动互联网/电子商务"id="radio_1"  /><label  for="radio_1">互联网/移动互联网/电子商务</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="网络游戏" / id="radio_2" ><label  for="radio_2">网络游戏</label></li>
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="计算机软件"/ id="radio_3" ><label  for="radio_3">计算机软件</label></li> 
+              <li><input class="hide rg_hy_input" type="radio" name="rg_hy_input" hy="IT服务/系统集成" id="radio_4" /><label  for="radio_4">IT服务/系统集成</label></li> 
+          </ul>
+    </td>
+    </tr>
+    </table>
+     </div>
+     </div>
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_hy_button"/> 
+	  <input type="submit" class="subAgain" value=" " name="cancle" id="btncancle"/>
+	  </div>
+      </div>
+	</div>    
+</div>
+
+
+
+
+<div class="rg_zw_div rg_choose_hy" >
+    <div class="rg_ch_title"> <span> 选择职能分类 </span><span class="hy_close"><a href="#" id="cancle"><img src="images/close.jpg" /></a></span></div>
+	<div class="rg_ch_checked" id="rg_zw_checked"></div>
+	<div class="rg_ch_content" id="rg_zw_content">
+    <div class="sort_data">
+  <table >
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件 </th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件 </th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件 </th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+   <tr class="odd">
+    <th>互联网.游戏.软件</th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    <tr >
+    <th>互联网.游戏.软件 </th>
+    <td>
+          <ul>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="java" id="zw_1" value="1"/><label for="zw_1"> java</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="php"   id="zw_2"  value="2"/><label for="zw_2"> php</label></li>
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="oracle"   id="zw_3"  value="3"/><label for="zw_3"> oracle</label></li> 
+              <li><input type="radio" name="area" class="hide rg_zw_input" zw="其他"  id="zw_4"  value="4"/><label for="zw_4"> 其他</label></li> 
+          </ul>
+    </td>
+    </tr>
+    </table>
+	</div>
+</div>
+
+ 	  <div class="set-keep">
+      <div  class="btnupdate"> 
+	  <input type="submit" class="subOK" value="" name="ok"  id="rg_zw_button"/> 
+	  <input type="reset" class="subAgain" value=" " name="cancle" id="btnZWcancle">
+	  </div>
+      </div>
+</div>
+
+
+
+</block>
+
+
